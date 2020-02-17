@@ -40,7 +40,3 @@ def count_sort( arr, maximum=-1 ):
     for i in range(len(counts)):
         results.extend([i] * counts[i])
     return results
-
-arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7, 1, 2, 3, 100]
-
-print(count_sort(arr1))
