@@ -26,7 +26,13 @@ def merge_sort( arr ):
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
     # TO-DO
-
+    while start < end:
+        if arr[start] < arr[mid]:
+            start += 1
+        else:
+            arr.insert(start, arr.pop(mid))
+            start += 1
+            mid += 1
     return arr
 
 def merge_sort_in_place(arr, l, r): 
