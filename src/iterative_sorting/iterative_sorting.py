@@ -40,3 +40,22 @@ def count_sort( arr, maximum=-1 ):
     for i in range(len(counts)):
         results.extend([i] * counts[i])
     return results
+
+# Wikipedia code
+def count_sort_wikipedia(arr):
+    count = [0 for i in range(max(arr) + 1)]
+    for i in arr:
+        count[i] += 1
+
+    total = 0
+    for i in range(len(count)):
+        count[i], total = total, count[i] + total
+
+    output = [None] * len(arr)
+    for i in arr:
+        output[count[i]] = i
+        count[i] += 1
+
+    return output
+
+print(count_sort_wikipedia([5, 3, 1, 8, 9, 100]))
